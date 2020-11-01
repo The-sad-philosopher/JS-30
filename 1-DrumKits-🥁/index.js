@@ -42,7 +42,7 @@ function handleAnimation(keyCode) {
   addAnimationClass(getKey(keyCode), "animate");
 }
 
-/****		Event Handlers ****/
+/****	  Event Handlers   ****/
 
 function handleKeyDownEvent(e) {
   handleAnimation(e.keyCode);
