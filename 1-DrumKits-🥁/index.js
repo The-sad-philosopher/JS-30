@@ -1,32 +1,54 @@
-/* 
-		In progress
-*/
+/****		Library	🔥️		****/
 
-window.addEventListener("keydown", handleKeyDownEvent);
+// universal
 
-function handleKeyDownEvent(e) {
-  // 	animate
+function getNode(selector, keyCode) {
+  return document.querySelector(`${selector}[data-key="${keyCode}"]`);
+}
 
-  // ** add animation class
-  const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-  if (!key) return;
-  key.classList.add("animate");
+// audio
 
-  // ** remove animation class
-  key.addEventListener("animationend", removeTransition);
+function getAudio(keyCode) {
+  return getNode("audio", keyCode);
+}
 
-  //	play audio
-
-  // ** get audio
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+function playAudio(audio) {
   if (!audio) return;
-
-  // ** play audio
   audio.currentTime = 0;
   audio.play();
 }
 
-function removeTransition() {
-  // console.log(this);
+function handleAudio(keyCode) {
+  return playAudio(getAudio(keyCode));
+}
+
+// animation
+
+function getKey(keyCode) {
+  return getNode("div", keyCode);
+}
+
+function addAnimationClass(node, className) {
+  if (!node) return;
+  node.classList.add(className);
+  node.addEventListener("animationend", handleAnimationEnd);
+}
+
+function handleAnimationEnd() {
   this.classList.remove("animate");
 }
+
+function handleAnimation(keyCode) {
+  addAnimationClass(getKey(keyCode), "animate");
+}
+
+/****		Event Handlers ****/
+
+function handleKeyDownEvent(e) {
+  handleAnimation(e.keyCode);
+  handleAudio(e.keyCode);
+}
+
+// global
+
+window.addEventListener("keydown", handleKeyDownEvent);
