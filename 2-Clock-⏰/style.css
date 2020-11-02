@@ -12,6 +12,7 @@ body {
   font-family: "Josefin Sans", sans-serif;
   color: #fff;
   text-align: center;
+  min-height: 100vh;
 }
 
 div.clock-container {
@@ -37,15 +38,32 @@ div.clock-face {
   box-shadow: -1px -5px 10px #101010, 1px 7px 50px #000;
   position: relative;
 }
+div.clock-face::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
 
 div.hand {
   width: 40%;
-  height: 1px;
+  height: 2px;
   background: #fff;
   position: absolute;
   top: 50%;
   left: 10%;
-  box-shadow: 1px 3px 5px #000;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+}
+
+div.hour-hand {
+  width: 25%;
+  height: 5px;
 }
 
 footer {
@@ -57,11 +75,13 @@ h2.label {
   position: absolute;
   top: 5%;
   left: 15%;
+  opacity: 0.5;
 }
 
 h1.time {
   margin-top: 3rem;
-  opacity: 0.9;
+  opacity: 0.7;
+  font-size: 3rem;
 }
 
 span.location {
@@ -71,7 +91,7 @@ span.location {
 }
 
 footer span {
-  opacity: 0.4;
+  opacity: 0.2;
   display: block;
   margin: 0.5rem;
 }
