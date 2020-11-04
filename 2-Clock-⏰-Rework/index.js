@@ -5,8 +5,8 @@ const second = document.querySelector("#sec");
 
 setInterval(() => {
   let day = new Date();
-  let h = day.getHours() * 30;
-  let m = day.getMinutes() * deg;
+  let h = (day.getHours() + 5) * 30;
+  let m = (day.getMinutes() + 30) * deg;
   let s = day.getSeconds() * deg;
 
   hour.style.transform = `rotateZ(${h + m / 12}deg)`;
