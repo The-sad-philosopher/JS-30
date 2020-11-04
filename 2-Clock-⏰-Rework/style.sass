@@ -1,0 +1,103 @@
+/** Global Variables **/
+$accent: #fff
+$primary-dark: #10141d
+$size: 450px
+  
+/** Rules **/
+  
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+body
+  display: flex
+  justify-content: center
+  align-items: center
+  min-height: 100vh
+  background: $primary-dark
+
+div.clock
+  width: $size
+  height: $size
+  border-radius: 50%
+  position: relative
+  border-inline: 1px solid $accent
+  box-shadow: 0 5px 30px #000
+  display: flex
+  justify-content: center
+  align-items: center
+
+  div.clock-face
+    width: $size - 100px
+    height: $size - 100px
+    border-radius: 50%
+    position: relative
+    box-shadow: 0 5px 30px #000
+    display: flex
+    justify-content: center
+    align-items: center
+
+  &::before
+    content: ''
+    position: absolute
+    width: 20px
+    height: 20px
+    background: $accent
+    border-radius: 100%
+    z-index: 5
+    box-shadow: 3px 3px 7px #000
+    
+
+  .hour-hand,.minute-hand,.second-hand
+    position: absolute
+
+  .hour-hand,.hour
+    width: 160px
+    height: 160px
+
+  .minute-hand, .min
+    width: 190px
+    height: 190px
+
+  .second-hand, .sec
+    width: 230px
+    height: 230px
+
+  .hour, .min, .sec
+    display: flex
+    justify-content: center
+    // align-items: center
+    position: absolute
+    border-radius: 50%
+  
+  .hour::before
+    content: ''
+    position: absolute
+    width: 8px
+    height: 80px
+    background: $accent
+    z-index: 1
+    border-radius: 6px 6px 0 0
+    box-shadow: 3px 3px 7px #000
+
+  .min::before
+    content: ''
+    position: absolute
+    width: 4px
+    height: 90px
+    background: $accent
+    z-index: 2
+    border-radius: 6px 6px 0 0
+    box-shadow: 3px 3px 7px #000
+
+  .sec::before
+    content: ''
+    position: absolute
+    width: 2px
+    height: 150px
+    background: $accent
+    z-index: 3
+    border-radius: 6px 6px 0 0
+    box-shadow: 3px 3px 7px #000
+    
