@@ -91,10 +91,53 @@ div.clock .sec::before {
   position: absolute;
   width: 2px;
   height: 150px;
-  background: #fff;
+  background: red;
   z-index: 3;
   border-radius: 6px 6px 0 0;
   box-shadow: 3px 3px 7px #000;
+}
+div.clock .unit {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  text-align: center;
+  color: #fff;
+}
+div.clock .unit1 {
+  transform: rotate(30deg);
+}
+div.clock .unit2 {
+  transform: rotate(60deg);
+}
+div.clock .unit3 {
+  transform: rotate(90deg);
+}
+div.clock .unit4 {
+  transform: rotate(120deg);
+}
+div.clock .unit5 {
+  transform: rotate(150deg);
+}
+div.clock .unit6 {
+  transform: rotate(180deg);
+}
+div.clock .unit7 {
+  transform: rotate(210deg);
+}
+div.clock .unit8 {
+  transform: rotate(240deg);
+}
+div.clock .unit9 {
+  transform: rotate(270deg);
+}
+div.clock .unit10 {
+  transform: rotate(300deg);
+}
+div.clock .unit11 {
+  transform: rotate(330deg);
+}
+div.clock .unit12 {
+  transform: rotate(360deg);
 }
 
 /*# sourceMappingURL=style.css.map */

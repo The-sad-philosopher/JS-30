@@ -67,7 +67,6 @@ div.clock
   .hour, .min, .sec
     display: flex
     justify-content: center
-    // align-items: center
     position: absolute
     border-radius: 50%
   
@@ -96,8 +95,18 @@ div.clock
     position: absolute
     width: 2px
     height: 150px
-    background: $accent
+    background: red
     z-index: 3
     border-radius: 6px 6px 0 0
     box-shadow: 3px 3px 7px #000
-    
+
+  .unit
+    position: absolute
+    width: $size - 30
+    height: $size - 30
+    text-align: center
+    color: $accent
+  
+  @for $i from 1 through 12
+    .unit#{$i}
+      transform: rotate(30deg * $i)
