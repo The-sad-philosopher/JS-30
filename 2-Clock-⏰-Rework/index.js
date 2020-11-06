@@ -10,6 +10,6 @@ setInterval(() => {
   let s = day.getSeconds() * deg;
 
   hour.style.transform = `rotateZ(${h + m / 12}deg)`;
-  min.style.transform = `rotateZ(${m}deg)`;
-  sec.style.transform = `rotateZ(${s}deg)`;
+  minute.style.transform = `rotateZ(${m}deg)`;
+  second.style.transform = `rotateZ(${s}deg)`;
 });
