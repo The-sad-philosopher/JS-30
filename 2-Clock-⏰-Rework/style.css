@@ -1,142 +1,149 @@
-/** Global Variables **/
-/** Rules **/
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
+  background: #10141d;
+  color: #fff;
+  min-height: 100vh;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: #10141d;
 }
 
-div.clock {
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 450px;
   height: 450px;
   border-radius: 50%;
-  position: relative;
   border-inline: 1px solid #fff;
   box-shadow: 0 5px 30px #000;
+}
+
+.clock-face {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-div.clock div.clock-face {
   width: 350px;
   height: 350px;
   border-radius: 50%;
-  position: relative;
   box-shadow: 0 5px 30px #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
-div.clock::before {
+.clock-face::before {
   content: "";
   position: absolute;
   width: 20px;
   height: 20px;
   background: #fff;
-  border-radius: 100%;
-  z-index: 5;
+  z-index: 10;
+  border-radius: 50%;
   box-shadow: 3px 3px 7px #000;
 }
-div.clock .hour-hand, div.clock .minute-hand, div.clock .second-hand {
+.clock-face .hour-hand,
+.clock-face .minute-hand,
+.clock-face .second-hand {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
 }
-div.clock .hour-hand, div.clock .hour {
+.clock-face .hour-hand {
   width: 160px;
   height: 160px;
 }
-div.clock .minute-hand, div.clock .min {
-  width: 190px;
-  height: 190px;
+.clock-face .minute-hand {
+  width: 200px;
+  height: 200px;
 }
-div.clock .second-hand, div.clock .sec {
+.clock-face .second-hand {
   width: 230px;
   height: 230px;
 }
-div.clock .hour, div.clock .min, div.clock .sec {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  border-radius: 50%;
-}
-div.clock .hour::before {
+.clock-face .hour-hand::before {
   content: "";
   position: absolute;
   width: 8px;
   height: 80px;
   background: #fff;
   z-index: 1;
-  border-radius: 6px 6px 0 0;
   box-shadow: 3px 3px 7px #000;
+  border-radius: 6px 6px 0 0;
 }
-div.clock .min::before {
+.clock-face .minute-hand::before {
   content: "";
   position: absolute;
   width: 4px;
-  height: 90px;
+  height: 100px;
   background: #fff;
   z-index: 2;
-  border-radius: 6px 6px 0 0;
   box-shadow: 3px 3px 7px #000;
+  border-radius: 6px 6px 0 0;
 }
-div.clock .sec::before {
+.clock-face .second-hand::before {
   content: "";
   position: absolute;
   width: 2px;
   height: 150px;
   background: red;
   z-index: 3;
-  border-radius: 6px 6px 0 0;
   box-shadow: 3px 3px 7px #000;
+  border-radius: 6px 6px 0 0;
 }
-div.clock .unit {
+
+.unit {
   position: absolute;
   width: 420px;
   height: 420px;
   text-align: center;
   color: #fff;
 }
-div.clock .unit1 {
+
+.unit1 {
   transform: rotate(30deg);
 }
-div.clock .unit2 {
+
+.unit2 {
   transform: rotate(60deg);
 }
-div.clock .unit3 {
+
+.unit3 {
   transform: rotate(90deg);
 }
-div.clock .unit4 {
+
+.unit4 {
   transform: rotate(120deg);
 }
-div.clock .unit5 {
+
+.unit5 {
   transform: rotate(150deg);
 }
-div.clock .unit6 {
+
+.unit6 {
   transform: rotate(180deg);
 }
-div.clock .unit7 {
+
+.unit7 {
   transform: rotate(210deg);
 }
-div.clock .unit8 {
+
+.unit8 {
   transform: rotate(240deg);
 }
-div.clock .unit9 {
+
+.unit9 {
   transform: rotate(270deg);
 }
-div.clock .unit10 {
+
+.unit10 {
   transform: rotate(300deg);
 }
-div.clock .unit11 {
+
+.unit11 {
   transform: rotate(330deg);
 }
-div.clock .unit12 {
+
+.unit12 {
   transform: rotate(360deg);
 }
 

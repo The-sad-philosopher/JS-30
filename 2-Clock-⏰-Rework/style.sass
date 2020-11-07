@@ -1,112 +1,95 @@
-/** Global Variables **/
-$accent: #fff
-$primary-dark: #10141d
-$size: 450px
+// Variables
 
-/** Rules **/
+$size: 450px
+$accent: #fff
+
+// Mixins & Functions
+
+=flex
+  display: flex
   
-*
-  box-sizing: border-box
-  margin: 0
-  padding: 0
+=center-flex
+  +flex
+  justify-content: center
+  align-items: center
+  
+=setWidthHeight ($width, $height: $width)
+  width: $width
+  height: $height
+  
+=setBeforeElement ($width, $height, $bg-color, $z-index: 1)
+  content: ''
+  position: absolute
+  +setWidthHeight($width, $height)
+  background: $bg-color
+  z-index: $z-index
+
+// Style Rules
 
 body
-  display: flex
-  justify-content: center
-  align-items: center
+  background: #10141d
+  color: #fff
   min-height: 100vh
-  background: $primary-dark
-
-div.clock
-  width: $size
-  height: $size
-  border-radius: 50%
   position: relative
+  +center-flex
+  
+.clock
+  +center-flex
+  +setWidthHeight($size)
+  border-radius: 50%
   border-inline: 1px solid $accent
   box-shadow: 0 5px 30px #000
-  display: flex
-  justify-content: center
-  align-items: center
 
-  div.clock-face
-    width: $size - 100px
-    height: $size - 100px
-    border-radius: 50%
-    position: relative
-    box-shadow: 0 5px 30px #000
-    display: flex
-    justify-content: center
-    align-items: center
-
+.clock-face
+  +center-flex
+  +setWidthHeight($size - 100px)
+  border-radius: 50%
+  box-shadow: 0 5px 30px #000
+  position: relative  
+  
   &::before
-    content: ''
-    position: absolute
-    width: 20px
-    height: 20px
-    background: $accent
-    border-radius: 100%
-    z-index: 5
-    box-shadow: 3px 3px 7px #000
-    
-
-  .hour-hand,.minute-hand,.second-hand
-    position: absolute
-
-  .hour-hand,.hour
-    width: 160px
-    height: 160px
-
-  .minute-hand, .min
-    width: 190px
-    height: 190px
-
-  .second-hand, .sec
-    width: 230px
-    height: 230px
-
-  .hour, .min, .sec
-    display: flex
-    justify-content: center
-    position: absolute
+    +setBeforeElement(20px, 20px, $accent, 10)
     border-radius: 50%
+    box-shadow: 3px 3px 7px #000
   
-  .hour::before
-    content: ''
+  .hour-hand,
+  .minute-hand,
+  .second-hand
     position: absolute
-    width: 8px
-    height: 80px
-    background: $accent
-    z-index: 1
-    border-radius: 6px 6px 0 0
+    +center-flex
+    align-items: flex-start
+    
+  .hour-hand
+    +setWidthHeight(160px)
+    
+  .minute-hand
+    +setWidthHeight(200px)
+    
+  .second-hand
+    +setWidthHeight(230px)
+    
+  .hour-hand::before
+    +setBeforeElement(8px, 80px, $accent, 1)
     box-shadow: 3px 3px 7px #000
-
-  .min::before
-    content: ''
-    position: absolute
-    width: 4px
-    height: 90px
-    background: $accent
-    z-index: 2
     border-radius: 6px 6px 0 0
-    box-shadow: 3px 3px 7px #000
 
-  .sec::before
-    content: ''
-    position: absolute
-    width: 2px
-    height: 150px
-    background: red
-    z-index: 3
+    
+  .minute-hand::before
+    +setBeforeElement(4px, 100px, $accent, 2)
+    box-shadow: 3px 3px 7px #000
     border-radius: 6px 6px 0 0
+    
+  .second-hand::before
+    +setBeforeElement(2px, 150px, red, 3)
     box-shadow: 3px 3px 7px #000
-
-  .unit
-    position: absolute
-    width: $size - 30
-    height: $size - 30
-    text-align: center
-    color: $accent
+    border-radius: 6px 6px 0 0
+    
+.unit
+  position: absolute
+  +setWidthHeight($size - 30px)
+  text-align: center
+  color: $accent
   
-  @for $i from 1 through 12
+@for $i from 1 through 12
     .unit#{$i}
       transform: rotate(30deg * $i)
