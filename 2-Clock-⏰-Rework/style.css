@@ -1,0 +1,150 @@
+body {
+  background: #10141d;
+  color: #fff;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  border-inline: 1px solid #fff;
+  box-shadow: 0 5px 30px #000;
+}
+
+.clock-face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  box-shadow: 0 5px 30px #000;
+  position: relative;
+}
+.clock-face::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  z-index: 10;
+  border-radius: 50%;
+  box-shadow: 3px 3px 7px #000;
+}
+.clock-face .hour-hand,
+.clock-face .minute-hand,
+.clock-face .second-hand {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+}
+.clock-face .hour-hand {
+  width: 160px;
+  height: 160px;
+}
+.clock-face .minute-hand {
+  width: 200px;
+  height: 200px;
+}
+.clock-face .second-hand {
+  width: 230px;
+  height: 230px;
+}
+.clock-face .hour-hand::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background: #fff;
+  z-index: 1;
+  box-shadow: 3px 3px 7px #000;
+  border-radius: 6px 6px 0 0;
+}
+.clock-face .minute-hand::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 100px;
+  background: #fff;
+  z-index: 2;
+  box-shadow: 3px 3px 7px #000;
+  border-radius: 6px 6px 0 0;
+}
+.clock-face .second-hand::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: red;
+  z-index: 3;
+  box-shadow: 3px 3px 7px #000;
+  border-radius: 6px 6px 0 0;
+}
+
+.unit {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  text-align: center;
+  color: #fff;
+}
+
+.unit1 {
+  transform: rotate(30deg);
+}
+
+.unit2 {
+  transform: rotate(60deg);
+}
+
+.unit3 {
+  transform: rotate(90deg);
+}
+
+.unit4 {
+  transform: rotate(120deg);
+}
+
+.unit5 {
+  transform: rotate(150deg);
+}
+
+.unit6 {
+  transform: rotate(180deg);
+}
+
+.unit7 {
+  transform: rotate(210deg);
+}
+
+.unit8 {
+  transform: rotate(240deg);
+}
+
+.unit9 {
+  transform: rotate(270deg);
+}
+
+.unit10 {
+  transform: rotate(300deg);
+}
+
+.unit11 {
+  transform: rotate(330deg);
+}
+
+.unit12 {
+  transform: rotate(360deg);
+}
+
+/*# sourceMappingURL=style.css.map */
