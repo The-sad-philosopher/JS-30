@@ -1,0 +1,65 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap')
+
+
+/** Variables **/
+
+$accent: #fff
+$bg-dark: linear-gradient(65deg, #000, #141427) 
+$base: #ffc600
+$spacing: 0px
+$blur: 0px
+
+:root
+  --accent: #{$accent}
+  --bg-dark: #{$bg-dark}
+  --base: #{$base}
+  --spacing: #{$spacing}
+  --blur: #{$blur}
+
+/** Resets **/  
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+/** Rules **/
+
+body 
+  background: var(--bg-dark)
+  color: var(--accent)
+  min-height: 100vh
+  font-family: 'Montserrat', sans-serif
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-around
+
+span
+  color: var(--base)
+
+div.wrapper
+  display: flex
+  width: 100%
+  justify-content: center
+  align-items: center
+
+  div.controls,
+  div.image-box
+    flex: 0 1 550px
+
+  img
+    max-width: 100%
+    height: auto
+    padding: var(--spacing)
+    background: var(--base)
+    filter: blur(var(--blur))
+
+  div.controls
+    input
+      display: block
+      margin-top: 1rem
+      margin-bottom: 2rem
+      cursor: pointer
+      opacity: 0.9

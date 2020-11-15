@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <title>Fancy Image Viewer</title>
+  </head>
+  <body>
+    <h1>Update CSS variables with <span>JS</span></h1>
+    <div class="wrapper">
+      <div class="controls">
+        <div>
+          <label for="spacing">Spacing</label>
+          <input
+            type="range"
+            name="spacing"
+            min="0"
+            max="200"
+            data-sizing="px"
+            value="0"
+            autocomplete="off"
+          />
+        </div>
+        <div>
+          <label for="blur">Blur</label>
+          <input
+            type="range"
+            name="blur"
+            min="0"
+            max="25"
+            data-sizing="px"
+            value="0"
+            autocomplete="off"
+          />
+        </div>
+        <div>
+          <label for="color">Base Color</label>
+          <input type="color" name="base" value="#ffc600" autocomplete="off" />
+        </div>
+      </div>
+      <div class="image-box">
+        <img
+          src="https://images.pexels.com/photos/1764091/pexels-photo-1764091.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+          alt="christmas-decoration-item"
+        />
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

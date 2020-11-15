@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+/** Variables **/
+:root {
+  --accent: #fff;
+  --bg-dark: linear-gradient(65deg, #000, #141427);
+  --base: #ffc600;
+  --spacing: 0px;
+  --blur: 0px;
+}
+
+/** Resets **/  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/** Rules **/
+body {
+  background: var(--bg-dark);
+  color: var(--accent);
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+span {
+  color: var(--base);
+}
+
+div.wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+div.wrapper div.controls,
+div.wrapper div.image-box {
+  flex: 0 1 550px;
+}
+div.wrapper img {
+  max-width: 100%;
+  height: auto;
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+}
+div.wrapper div.controls input {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+/*# sourceMappingURL=style.css.map */
