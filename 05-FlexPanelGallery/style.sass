@@ -6,6 +6,8 @@
 $bg: #0f0f22
 $primary:#ffee00
 $accent: #fff
+$gradient: linear-gradient(135deg,#00000085,#0000003f)
+$fontSize: 3rem
 
 /** Rules **/
 
@@ -21,34 +23,62 @@ body
   min-height: 100vh
   color: $accent
   font-family: 'Cookie', cursive
-  font-size: 2rem
+  font-size: $fontSize
+  overflow: hidden
 
 div.panels
   min-height: 100vh
+  display: flex
+  flex-wrap: wrap
 
   div.panel
     background: #6B0F9C
-    text-align: center
+    flex: 1
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-around
+    flex-direction: column
+    transition: flex 0.7s  cubic-bezier(0.61,-0.19, 0.7,-0.11)
+
+    p
+      transition: transform 0.7s  cubic-bezier(0.61,-0.19, 0.7,-0.11)
+
+    p:first-child
+      transform: translateY(-500%)
 
     p:nth-child(2)
-      font-size: 4rem
+      font-size: $fontSize + 2rem
+
+    p:last-child
+      transform: translateY(500%)
 
   div.panel1 
-    background: url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500)
+    background: $gradient, url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500)
   
   div.panel2
-    background: url(https://source.unsplash.com/XlG8XoeHTJE/1500x1500)
+    background: $gradient, url(https://source.unsplash.com/XlG8XoeHTJE/1500x1500)
   
   div.panel3 
-    background: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d)
+    background: $gradient, url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d)
   
   div.panel4 
-    background: url(https://source.unsplash.com/ITjiVXcwVng/1500x1500)
+    background: $gradient, url(https://source.unsplash.com/ITjiVXcwVng/1500x1500)
   
   div.panel5
-    background: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500)
+    background: $gradient, url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500)
   
   div.panel
     background-size: cover
     background-position: center
     box-shadow: inset 0 7px 50px #00000075
+
+  div.panel.active
+    p:first-child
+      transform: translateY(0)
+
+    p:last-child
+      transform: translateY(0)
+
+  div.panel.open
+    flex:5
