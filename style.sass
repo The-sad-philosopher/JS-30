@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap')
+
+/** Variables **/
+$bg: #242424
+$accent: #ffe815
+
+/** Rules **/
+
+*,
+*::before,
+*::after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  background: $bg
+  color: #fff
+  min-height: 100vh 
+  width: 100%
+  font-family: 'Montserrat'
+  text-align: center
+
+  h1.title
+    padding: 3rem
+
+    span
+      color: $accent
+
+div.wrapper
+  display: grid
+  grid-gap: 3rem
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+  padding: 3rem
+  font-size: 1.3rem
+
+  .challenge-box
+    height: 250px
+    border-radius: 20px
+    box-shadow: 0 3px 50px #00000065
+    transition: 0.1s ease-in
+
+    a
+      text-decoration: none
+      color: inherit
+      display: inline-block
+      width: 100%
+      height: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+
+    &:hover,
+    &:focus
+      transform: translateY(-5px)
+      border-bottom: 1px solid $accent
+      font-size: 1.33rem
