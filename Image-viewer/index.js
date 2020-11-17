@@ -1,5 +1,4 @@
 const inputs = Array.from(document.querySelectorAll(".controls input"));
-console.log(inputs);
 
 inputs.forEach((input) => {
   input.addEventListener("change", handleUpdate);
