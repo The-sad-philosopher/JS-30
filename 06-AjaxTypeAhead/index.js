@@ -28,19 +28,20 @@ function findMatches(wordToMatch, cities) {
   });
 }
 
+function addHighlight(string, highlightString) {
+  const regexHighlight = new RegExp(highlightString, 'gi');
+  return string.replace(
+    regexHighlight,
+    `<span class="highlight">${highlightString}</span>`
+  );
+}
+
 function displayMatches() {
   const matchedPlaces = findMatches(this.value, cities);
-  const list = matchedPlaces
+  const matchedList = matchedPlaces
     .map((matchedPlace) => {
-      const regexHighlight = new RegExp(this.value, 'gi');
-      const cityName = matchedPlace.city.replace(
-        regexHighlight,
-        `<span class="highlight">${this.value}</span>`
-      );
-      const stateName = matchedPlace.state.replace(
-        regexHighlight,
-        `<span class="highlight">${this.value}</span>`
-      );
+      const cityName = addHighlight(matchedPlace.city, this.value);
+      const stateName = addHighlight(matchedPlace.state, this.value);
       const population = addCommaToNumbers(matchedPlace.population);
       return `
             <li>
@@ -50,5 +51,5 @@ function displayMatches() {
           `;
     })
     .join('');
-  suggestionList.innerHTML = list;
+  suggestionList.innerHTML = matchedList;
 }
